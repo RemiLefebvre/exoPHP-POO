@@ -4,24 +4,22 @@
 /*
 ** Detail of vehicul
 */
-if (condition) {
-  # code...
+if (isset($_GET['id'])) {
+  include("controllers/detail/detail.php");
 }
-
-
 
 /*
 ** Listing of all vehicule + filtre
 */
-elseif (condition) {
-  # code...
-}
+// elseif (condition) {
+//   # code...
+// }
 
 
 /*
 ** Listing of all vehicule
 */
 else {
-  # code...
+  include("controllers/linsting/linsting.php");
 }
  ?>
