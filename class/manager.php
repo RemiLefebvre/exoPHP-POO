@@ -3,7 +3,7 @@
 /*
 **Manager of Vehicules class
 */
-class VehiculesManager{
+class VehiculeManager{
   private $_db; // Instance de PDO
 
   /*

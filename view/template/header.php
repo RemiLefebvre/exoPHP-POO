@@ -32,13 +32,16 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <h1 class="navbar-brand" href="#">Listing Vehicule</h1>
+  <h1 class="navbar-brand" href="#">WATATA</h1>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item ">
-        <form class="" action="index.php" method="post">
+      <li class="pr-5 nav-item active">
+        <a class="nav-link" href="index.php">Linsting vehicule</a>
+      </li>
+      <li class="pr-5 nav-item ">
+        <form class="d-flex flex-row" action="index.php" method="post">
           <select name="filtre" class="nav-link custom-select">
-            <option selected>Filtres</option>
+            <option class="pr-4" selected>Filtres</option>
             <option value="name">Name</option>
             <option value="model">Model</option>
             <option value="type">Type</option>
@@ -46,7 +49,7 @@
           <input type="submit" value="OK">
         </form>
       </li>
-      <li class="nav-item active">
+      <li class="pr-5 nav-item active">
         <a class="nav-link" href="index.php?add=vehicule">Add vehicule</a>
       </li>
     </ul>

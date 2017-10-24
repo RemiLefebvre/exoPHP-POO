@@ -20,6 +20,6 @@ if (isset($_GET['id'])) {
 ** Listing of all vehicule
 */
 else {
-  include("controllers/linsting/linsting.php");
+  include("controllers/listing/listing.php");
 }
  ?>
