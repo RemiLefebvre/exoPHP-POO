@@ -26,3 +26,29 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     </head>
     <body>
+
+
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <h1 class="navbar-brand" href="#">Listing Vehicule</h1>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <form class="" action="index.php" method="post">
+          <select name="filtre" class="nav-link custom-select">
+            <option selected>Filtres</option>
+            <option value="name">Name</option>
+            <option value="model">Model</option>
+            <option value="type">Type</option>
+          </select>
+          <input type="submit" value="OK">
+        </form>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php?add=vehicule">Add vehicule</a>
+      </li>
+    </ul>
+  </div>
+</nav>
