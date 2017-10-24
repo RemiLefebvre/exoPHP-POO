@@ -23,12 +23,15 @@ class VehiculeManager{
   **Add vehicules
   */
   public function add(Vehicule $vehicule){
+    // echo $vehicule->name();
+    echo "</br>";
+    var_dump($vehicule);
     $q = $this->_db->prepare('INSERT INTO vehicules(type, name, model, detail) VALUES(:type, :name, :model, :detail)');
     $q->execute(array(
-      'nom'=>$vehicule->name(),
-      'nom'=>$vehicule->type(),
-      'nom'=>$vehicule->model(),
-      'nom'=>$vehicule->detail()
+      'type'=>$vehicule->type(),
+      'name'=>$vehicule->name(),
+      'model'=>$vehicule->model(),
+      'detail'=>$vehicule->detail()
     ));
   }
 

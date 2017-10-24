@@ -29,7 +29,7 @@
 
 <body>
 
-<!-- NAV BAR -->
+  <!-- NAV BAR -->
   <nav class="navbar navbar-toggleable-md navbar-light bg-info">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -52,31 +52,29 @@
           </form>
         </li>
         <li class="pr-5 nav-item active ">
-          <a class="nav-link addVehicule" >Add vehicule</a>
+          <a class="nav-link addVehicule">Add vehicule</a>
         </li>
       </ul>
     </div>
   </nav>
 
 
-
-<!-- ADD VEHICULE BAR -->
+  <!-- ADD VEHICULE BAR -->
   <nav class="navbar bg-faded" id="addVehiculeBar">
     <h1 class="navbar-brand" href="#">Add vehicule</h1>
-    <div class="" >
+    <div class="">
       <ul class="navbar-nav">
         <form class="" action="index.php" method="post">
-
-        <li class="pr-5 nav-item active">
-          <input type="text" name="name" placeholder="Name" required>
-        </li>
-        <li class="pr-5 nav-item active">
-          <input type="text" name="model" placeholder="Modele" required>
-        </li>
-        <li class="pr-5 nav-item active">
-          <input type="text" name="detail" placeholder="Detail" required>
-        </li>
-        <li class="pr-5 nav-item d-flex flex-row ">
+          <li class="pr-5 nav-item active">
+            <input type="text" name="name" placeholder="Name" required>
+          </li>
+          <li class="pr-5 nav-item active">
+            <input type="text" name="model" placeholder="Modele" required>
+          </li>
+          <li class="pr-5 nav-item active">
+            <input type="text" name="detail" placeholder="Detail" required>
+          </li>
+          <li class="pr-5 nav-item d-flex flex-row ">
             <select name="type" class="nav-link custom-select" required>
               <option class="pr-4" selected>Type</option>
               <option value="truck">Truck</option>
@@ -84,8 +82,8 @@
               <option value="moto">Moto</option>
             </select>
             <input type="submit" name="add" value="Add">
-        </li>
-      </form>
+          </li>
+        </form>
       </ul>
     </div>
   </nav>
