@@ -9,11 +9,6 @@
    protected $_model;
    protected $_text;
 
-  //  const CEST_MOI = 1;
-  //  const PERSONNAGE_FRAPPE = 2;
-  //  const PERSONNAGE_TUE = 3;
-
-
    public function __construct(array $donnees){
      $this->hydrate($donnees);
    }
@@ -60,7 +55,6 @@
    public function setType(){
     $this->_type = static::class;
    }
-
  }
 
 
@@ -68,30 +62,18 @@
   * Class Truck
   */
  class Truck extends Vehicule{
-
-   function __construct(argument){
-     # code...
-   }
  }
 
  /**
   * Class Car
   */
  class Car extends Vehicule{
-
-   function __construct(argument){
-     # code...
-   }
  }
 
  /**
   * Class Moto
   */
  class Moto extends Vehicule{
-
-   function __construct(argument){
-     # code...
-   }
  }
 
  ?>
