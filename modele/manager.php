@@ -52,10 +52,15 @@ class VehiculeManager{
         $q = $this->_db->query('SELECT id, name, detail, model ,type FROM vehicules WHERE id ='.$info);
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
       }
-
-      // service createVehicule
-      $vehicule = createVehicule(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail'],"type" => $donnees['type']]);
-
+      if ($donnees['type']=="truck") {
+        $vehicule = new Truck(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="car") {
+        $vehicule = new Car(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="moto") {
+        $vehicule = new Moto(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
       return $vehicule;
     }
 
@@ -68,8 +73,7 @@ class VehiculeManager{
     $q = $this->_db->query('SELECT id, name, detail, model ,type FROM vehicules  ORDER BY '.$info);
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
-      
-      // service createVehicule
+
       $listVehicule[] = createVehicule(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail'],"type" => $donnees['type']]);
 
     }

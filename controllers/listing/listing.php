@@ -1,6 +1,7 @@
 <?php
 require("model/manager.php");
 require("model/entities/vehicules.php");
+require("services/createVehicule.php");
 
 /*
 **Create Véhicule manager
@@ -19,15 +20,9 @@ if (isset($_POST['validModif']) && isset($_POST['type']) && isset($_POST['name']
       $modifVehiculeName=htmlspecialchars($_POST['name']);
       $modifVehiculeId=htmlspecialchars($_POST['id']);
 
-      if ($modifVehiculeType=="truck") {
-        $modifVehicule = new Truck(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"detail" => $modifVehiculeModel]);
-      }
-      elseif ($modifVehiculeType=="car") {
-        $modifVehicule = new Car(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"detail" => $modifVehiculeModel]);
-      }
-      elseif ($modifVehiculeType=="moto") {
-        $modifVehicule = new Moto(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"detail" => $modifVehiculeModel]);
-      }
+      // services createVehicule
+      $modifVehicule=createVehicule(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"type" => $modifVehiculeType]);
+
       $manager->update($modifVehicule);
     }
     else {
@@ -50,15 +45,10 @@ if (isset($_POST['add'])) {
       $detail=htmlspecialchars($_POST['detail']);
       $type=htmlspecialchars($_POST['type']);
       $model=intval(htmlspecialchars($_POST['model']));
-      if ($type=='truck') {
-        $addVehicule = new Truck(["name" => $name,"model" => $model,"detail" => $detail]);
-      }
-      if ($type=='car') {
-        $addVehicule = new Car(["name" => $name,"model" => $model,"detail" => $detail]);
-      }
-      if ($type=='moto') {
-        $addVehicule = new Moto(["name" => $name,"model" => $model,"detail" => $detail]);
-      }
+
+      // services createVehicule
+      $addVehicule=createVehicule(["name" => $name,"model" => $model,"detail" => $detail,"type" => $type]);
+
       $manager->add($addVehicule);
     }
     else {
