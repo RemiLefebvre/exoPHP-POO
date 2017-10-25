@@ -3,7 +3,7 @@
   echo "Error: " .$message;
 } ?>
 
-<main class="container mt-5">
+<main class="container ">
   <h2>List of vehicules</h2>
   <table class="table table-hover table-responsive">
     <thead>

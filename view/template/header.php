@@ -29,12 +29,13 @@
 
 <body>
 
+<header class="container-fluid fixed-top">
   <!-- NAV BAR -->
   <nav class="navbar navbar-toggleable-md navbar-light bg-info">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <h1 class="navbar-brand" href="#">WATATA</h1>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1 class="navbar-brand" > <strong>WATATA</strong></h1>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="pr-5 nav-item active">
@@ -53,7 +54,7 @@
               <input type="submit" value="OK">
             </form>
           </li>
-          <?php 
+          <?php
         } ?>
         <li class="pr-5 nav-item active ">
           <a class="nav-link addVehicule">Add vehicule</a>
@@ -91,3 +92,5 @@
       </ul>
     </div>
   </nav>
+
+</header>

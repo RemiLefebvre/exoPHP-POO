@@ -1,5 +1,6 @@
 <?php require_once("template/header.php"); ?>
-<main class="container mt-5">
+
+<main class="container">
   <h2>Detail of vehicule:</h2>
   <div class="card">
     <div class="row">
