@@ -20,9 +20,9 @@
           ?>
           <tr>
             <form action="index.php" method="post">
-              <td><input class"" type="text" placeholder="<?php echo $vehicule->name() ?>"></td>
-              <td><input class"" type="text" placeholder=" <?php echo $vehicule->type() ?>"></td>
-              <td><input class"" type="text" placeholder=" <?php echo $vehicule->model() ?>"></td>
+              <td><input class"" name="name" type="text" value="<?php echo $vehicule->name() ?>"></td>
+              <td><input class"" name="type" type="text" value="<?php echo $vehicule->type() ?>"></td>
+              <td><input class"" name="model" type="text" value="<?php echo $vehicule->model() ?>"></td>
               <td class="d-flex flex-row">
                   <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
                   <input class"ml-3 btn btn-primary" type="submit" name="validModif" value="Valid modif">

@@ -42,7 +42,7 @@ class VehiculeManager{
 
 
   /*
-  **get vehicul
+  **Get vehicul
   */
   public function get($info){
       if (is_int($info)){
@@ -55,7 +55,16 @@ class VehiculeManager{
         $q->execute(['name' => $info]);
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
       }
-      return $donnees;
+      if ($donnees['type']=="truck") {
+        $vehicule = new Truck(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="car") {
+        $vehicule = new Car(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="moto") {
+        $vehicule = new Moto(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      return $vehicule;
     }
 
   /*
@@ -82,14 +91,15 @@ class VehiculeManager{
 
   /*
   **Update vehicule
-  at arg :
   */
   public function update(Vehicule $vehicule){
-    $q = $this->_db->prepare('UPDATE vehicules SET degats = :degats WHERE id = :id');
+    $q = $this->_db->prepare('UPDATE vehicules SET model = :model,type = :type,name = :name WHERE id = :id');
 
     $q->execute(array(
-      'degats'=>$vehicule->degats(),
-      'id'=>$vehicule->id()
+      'id'=>$vehicule->id(),
+      'model'=>$vehicule->model(),
+      'type'=>$vehicule->type(),
+      'name'=>$vehicule->name()
     ));
   }
 
