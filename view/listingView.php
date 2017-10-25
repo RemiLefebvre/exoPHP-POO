@@ -42,7 +42,7 @@
               <td class="d-flex flex-row">
                   <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
                   <input class"ml-3 btn btn-primary" type="submit" name="modif" value="Modif">
-                  <input class"ml-3 btn btn-success" type="submit" name="detail" value="Detail">
+                  <input class"ml-3 btn btn-success" type="submit" name="detailVehicule" value="Detail">
                   <input class"ml-3 btn btn-danger" type="submit" name="supp" value="Delete">
               </td>
             </form>
