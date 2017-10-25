@@ -64,14 +64,22 @@ class VehiculeManager{
   **Get listing
   */
   public function getList($info){
-    $vehicules = [];
+    $listVehicule = [];
 
-    $q = $this->_db->query('SELECT id, name, detail, model FROM vehicules  ORDER BY '.$info);
+    $q = $this->_db->query('SELECT id, name, detail, model ,type FROM vehicules  ORDER BY '.$info);
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
-      $vehicules[] = new Vehicule($donnees);
+      if ($donnees['type']=="truck") {
+        $listVehicule[] = new Truck(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="car") {
+        $listVehicule[] = new Car(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
+      elseif ($donnees['type']=="moto") {
+        $listVehicule[] = new Moto(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+      }
     }
-    return $vehicules;
+    return $listVehicule;
   }
 
   /*
