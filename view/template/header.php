@@ -40,17 +40,21 @@
         <li class="pr-5 nav-item active">
           <a class="nav-link" href="index.php">Linsting vehicule</a>
         </li>
-        <li class="pr-5 nav-item ">
-          <form class="d-flex flex-row" action="index.php" method="post">
-            <select name="filtre" class="nav-link custom-select">
-            <option class="pr-4" selected>Filtres</option>
-            <option value="name">Name</option>
-            <option value="model">Model</option>
-            <option value="type">Type</option>
-          </select>
-            <input type="submit" value="OK">
-          </form>
-        </li>
+        <?php if (!isset($_POST["detailVehicule"])) {
+          ?>
+          <li class="pr-5 nav-item ">
+            <form class="d-flex flex-row" action="index.php" method="post">
+              <select name="filtre" class="nav-link custom-select">
+                <option class="pr-4" selected>Filtres</option>
+                <option value="name">Name</option>
+                <option value="model">Model</option>
+                <option value="type">Type</option>
+              </select>
+              <input type="submit" value="OK">
+            </form>
+          </li>
+          <?php 
+        } ?>
         <li class="pr-5 nav-item active ">
           <a class="nav-link addVehicule">Add vehicule</a>
         </li>

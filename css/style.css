@@ -1,3 +1,10 @@
 #addVehiculeBar{
   display: none;
 }
+.addVehicule{
+  cursor: pointer;
+}
+
+th{
+  min-width: 200px;
+}
