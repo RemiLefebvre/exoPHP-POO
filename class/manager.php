@@ -48,13 +48,7 @@ class VehiculeManager{
   */
   public function get($info){
       if (is_int($info)){
-        $q = $this->_db->prepare('SELECT id, name, detail, model FROM vehicules WHERE id = :id');
-        $q->execute(['id' => $info]);
-        $donnees = $q->fetch(PDO::FETCH_ASSOC);
-      }
-      else{
-        $q = $this->_db->prepare('SELECT id, name, detail, model FROM vehicules WHERE name = :name');
-        $q->execute(['name' => $info]);
+        $q = $this->_db->query('SELECT id, name, detail, model ,type FROM vehicules WHERE id ='.$info);
         $donnees = $q->fetch(PDO::FETCH_ASSOC);
       }
       if ($donnees['type']=="truck") {

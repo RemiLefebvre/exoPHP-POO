@@ -4,16 +4,10 @@
 /*
 ** Detail of vehicul
 */
-if (isset($_GET['id'])) {
+if (isset($_POST['detail'])) {
   include("controllers/detail/detail.php");
 }
 
-/*
-** Listing of all vehicule + filtre
-*/
-// elseif (condition) {
-//   # code...
-// }
 
 
 /*

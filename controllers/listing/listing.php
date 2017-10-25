@@ -81,8 +81,6 @@ if (isset($_POST['supp']) && isset($_POST['id'])) {
 
 
 
-
-
 /*
 **Get Véhicule list
 **If filtring
