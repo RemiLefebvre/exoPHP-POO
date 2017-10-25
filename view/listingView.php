@@ -1,9 +1,9 @@
 <?php require_once("template/header.php"); ?>
-<?php if (isset($message)) {
-  echo "Error: " .$message;
-} ?>
 
 <main class="container ">
+  <?php if (isset($message)) {
+    echo "Error: " .$message;
+  } ?>
   <h2>List of vehicules</h2>
   <table class="table table-hover table-responsive">
     <thead>
@@ -11,6 +11,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Model</th>
+        <th>Detail</th>
       </tr>
     </thead>
     <tbody>
@@ -20,13 +21,14 @@
           ?>
           <tr>
             <form action="index.php" method="post">
+              <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
               <td><input class"" name="name" type="text" value="<?php echo $vehicule->name() ?>"></td>
               <td><input class"" name="type" type="text" value="<?php echo $vehicule->type() ?>"></td>
               <td><input class"" name="model" type="text" value="<?php echo $vehicule->model() ?>"></td>
+              <td><input class"" name="detail" type="text" value="<?php echo $vehicule->detail() ?>"></td>
               <td class="d-flex flex-row">
-                  <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
-                  <input class"ml-3 btn btn-primary" type="submit" name="validModif" value="Valid modif">
-                  <input class"ml-3 btn btn-primary" type="submit" value="Cancel">
+                <input class"ml-3 btn btn-primary" type="submit" name="validModif" value="Valid modif">
+                <input class"ml-3 btn btn-primary" type="submit" value="Cancel">
               </td>
             </form>
           </tr>
@@ -39,6 +41,7 @@
               <td><?php echo $vehicule->name() ?></td>
               <td><?php echo $vehicule->type() ?></td>
               <td><?php echo $vehicule->model() ?></td>
+              <td><?php echo $vehicule->detail() ?></td>
               <td class="d-flex flex-row">
                   <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
                   <input class"ml-3 btn btn-primary" type="submit" name="modif" value="Modif">

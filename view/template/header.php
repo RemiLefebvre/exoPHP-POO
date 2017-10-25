@@ -11,7 +11,7 @@
   <!-- Font family -->
 
   <!-- Fontawersome -->
-  <script src="https://use.fontawesome.com/4d141429f4.js"></script>
+  <!-- <script src="https://use.fontawesome.com/4d141429f4.js"></script> -->
 
   <link rel="icon" href="img/logo.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">

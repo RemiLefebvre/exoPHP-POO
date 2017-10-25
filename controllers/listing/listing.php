@@ -14,10 +14,10 @@ $manager = new VehiculeManager($db);
 **Update vehicule
 */
 /*verification if there are all require's infos*/
-if (isset($_POST['validModif']) && isset($_POST['type']) && isset($_POST['name']) && isset($_POST['model'])) {
+if (isset($_POST['validModif']) && isset($_POST['detail']) && isset($_POST['type']) && isset($_POST['model']) && isset($_POST['name'])) {
 
   /*verification if all input are full*/
-  if (!empty($_POST['name']) && !empty($_POST['type']) && !empty($_POST['model'])) {
+  if ( !empty($_POST['detail']) && !empty($_POST['type']) && !empty($_POST['model']) && !empty($_POST['name'])) {
 
     /*verification if format model and format type are correct*/
     if (preg_match("#^[0-9]{4}$#",$_POST['model']) && preg_match("#^car|truck|moto$#",$_POST['type'])) {
@@ -25,11 +25,12 @@ if (isset($_POST['validModif']) && isset($_POST['type']) && isset($_POST['name']
       /*protect XSS failling*/
       $modifVehiculeType=htmlspecialchars($_POST['type']);
       $modifVehiculeModel=htmlspecialchars($_POST['model']);
+      $modifDetail=htmlspecialchars($_POST['detail']);
       $modifVehiculeName=htmlspecialchars($_POST['name']);
       $modifVehiculeId=htmlspecialchars($_POST['id']);
 
       // services createVehicule
-      $modifVehicule=createVehicule(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"type" => $modifVehiculeType]);
+      $modifVehicule=createVehicule(["id" => $modifVehiculeId,"name" => $modifVehiculeName,"model" => $modifVehiculeModel,"type" => $modifVehiculeType,"detail" => $modifDetail]);
 
       $manager->update($modifVehicule);
     }

@@ -68,7 +68,7 @@ class VehiculeManager{
     $q = $this->_db->query('SELECT id, name, detail, model ,type FROM vehicules  ORDER BY '.$info);
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
-      
+
       // service createVehicule
       $listVehicule[] = createVehicule(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail'],"type" => $donnees['type']]);
 
@@ -80,12 +80,13 @@ class VehiculeManager{
   **Update vehicule
   */
   public function update(Vehicule $vehicule){
-    $q = $this->_db->prepare('UPDATE vehicules SET model = :model,type = :type,name = :name WHERE id = :id');
+    $q = $this->_db->prepare('UPDATE vehicules SET model = :model,type = :type,name = :name,detail = :detail WHERE id = :id');
 
     $q->execute(array(
       'id'=>$vehicule->id(),
       'model'=>$vehicule->model(),
       'type'=>$vehicule->type(),
+      'detail'=>$vehicule->detail(),
       'name'=>$vehicule->name()
     ));
   }
