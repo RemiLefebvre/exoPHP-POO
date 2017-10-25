@@ -8,20 +8,6 @@ require("class/vehicules.php");
 */
 $manager = new VehiculeManager($db);
 
-
-
-/*
-**Get Véhicule list
-**If filtring
-*/
-if (isset($_POST['filtre'])) {
-  $filtre=htmlspecialchars($_POST['filtre']);
-}
-else {
-  $filtre='name';
-}
-$vehicules= $manager->getList($filtre);
-
 /*
 **Add vehicule
 */
@@ -41,11 +27,34 @@ if (isset($_POST['add'])) {
       if ($type=='moto') {
         $addVehicule = new Moto(["name" => $name,"model" => $model,"detail" => $detail]);
       }
-      $addVehicule->name();
       $manager->add($addVehicule);
     }
+    else {
+      $message="Date false (Exemple:1999)";
+    }
+  }
+  else {
+    $message="Champ empty";
   }
 }
+
+
+/*
+**Get Véhicule list
+**If filtring
+*/
+if (isset($_POST['filtre'])) {
+  $filtre=htmlspecialchars($_POST['filtre']);
+}
+else {
+  $filtre='name';
+}
+$vehicules= $manager->getList($filtre);
+
+
+
+
+
 
 require("view/listingView.php");
 
