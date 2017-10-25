@@ -1,10 +1,9 @@
 <?php
-require("controllers/phpmyadmin.php");
-require("class/manager.php");
-require("class/vehicules.php");
+require("model/manager.php");
+require("model/entities/vehicules.php");
 
 /*
-**Creat Véhicule manager
+**Create Véhicule manager
 */
 $manager = new VehiculeManager($db);
 
