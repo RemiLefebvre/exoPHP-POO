@@ -5,7 +5,7 @@
 
 <main class="container mt-5">
   <h2>List of vehicules</h2>
-  <table class="table table-hover">
+  <table class="table table-hover table-responsive">
     <thead>
       <tr>
         <th>Name</th>
@@ -15,21 +15,40 @@
     </thead>
     <tbody>
       <?php foreach ($vehicules as $vehicule) {
-        ?>
-        <tr>
-          <td><?php echo $vehicule->name() ?></td>
-          <td><?php echo $vehicule->type() ?></td>
-          <td><?php echo $vehicule->model() ?></td>
-          <td>
-            <form class="d-flex flex-row" action="index.html" method="post">
-              <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
-              <input type="submit" name="modif" value="Modif">
-              <input type="submit" name="supp" value="Delete">
-              <input type="submit" name="detail" value="Detail">
+        // if the vehicule select to modif
+       if (isset($_POST['modif']) && isset($_POST['id']) && $vehicule->id()==$_POST['id']) {
+          ?>
+          <tr>
+            <form action="index.php" method="post">
+              <td><input class"" type="text" placeholder="<?php echo $vehicule->name() ?>"></td>
+              <td><input class"" type="text" placeholder=" <?php echo $vehicule->type() ?>"></td>
+              <td><input class"" type="text" placeholder=" <?php echo $vehicule->model() ?>"></td>
+              <td class="d-flex flex-row">
+                  <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
+                  <input class"ml-3 btn btn-primary" type="submit" name="validModif" value="Valid modif">
+                  <input class"ml-3 btn btn-primary" type="submit" value="Cancel">
+              </td>
             </form>
-          </td>
-        </tr>
-        <?php
+          </tr>
+          <?php
+        }
+        else {
+          ?>
+          <tr>
+            <form  action="index.php" method="post">
+              <td><?php echo $vehicule->name() ?></td>
+              <td><?php echo $vehicule->type() ?></td>
+              <td><?php echo $vehicule->model() ?></td>
+              <td class="d-flex flex-row">
+                  <input type="hidden" name="id" value="<?php  echo $vehicule->id()?>">
+                  <input class"ml-3 btn btn-primary" type="submit" name="modif" value="Modif">
+                  <input class"ml-3 btn btn-success" type="submit" name="detail" value="Detail">
+                  <input class"ml-3 btn btn-danger" type="submit" name="supp" value="Delete">
+              </td>
+            </form>
+          </tr>
+          <?php
+        }
       } ?>
     </tbody>
   </table>

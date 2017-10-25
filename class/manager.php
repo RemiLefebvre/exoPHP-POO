@@ -68,13 +68,13 @@ class VehiculeManager{
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
       if ($donnees['type']=="truck") {
-        $listVehicule[] = new Truck(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+        $listVehicule[] = new Truck(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
       }
       elseif ($donnees['type']=="car") {
-        $listVehicule[] = new Car(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+        $listVehicule[] = new Car(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
       }
       elseif ($donnees['type']=="moto") {
-        $listVehicule[] = new Moto(["name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
+        $listVehicule[] = new Moto(["id" => $donnees['id'],"name" => $donnees['name'],"model" => $donnees['model'],"detail" => $donnees['detail']]);
       }
     }
     return $listVehicule;
