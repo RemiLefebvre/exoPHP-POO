@@ -26,6 +26,7 @@
               <td><input class"" name="type" type="text" value="<?php echo $vehicule->type() ?>"></td>
               <td><input class"" name="model" type="text" value="<?php echo $vehicule->model() ?>"></td>
               <td><input class"" name="detail" type="text" value="<?php echo $vehicule->detail() ?>"></td>
+              
               <td class="d-flex flex-row">
                 <input class"ml-3 btn btn-primary" type="submit" name="validModif" value="Valid modif">
                 <input class"ml-3 btn btn-primary" type="submit" value="Cancel">

@@ -10,7 +10,8 @@
     <form class="" action="index.php" method="post">
       <input type="hidden" name="detailVehicule" value="null">
       <input type="hidden" name="id" value="<?php echo $vehicule->id() ?>">
-      <input type="submit" name="modifDetail" value="Modif  ">
+      <input type="submit" name="modifDetail" value="Modif">
+      <input type="submit" name="supp" value="Delete">
     </form>
   </div>
 </main>

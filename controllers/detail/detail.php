@@ -11,8 +11,14 @@ require("services/autoLoader.php");
 */
 $manager = new VehiculeManager($db);
 
-
-
+/*
+**Delete vehicule
+*/
+if (isset($_POST['supp'])) {
+  $vehiculeDelete=intval(htmlspecialchars($_POST['id']));
+  $manager->delete($vehiculeDelete);
+  header("Location:index.php");
+}
 
 /*
 **Update vehicule

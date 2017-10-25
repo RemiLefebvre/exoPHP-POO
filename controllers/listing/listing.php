@@ -39,7 +39,7 @@ if (isset($_POST['validModif']) && isset($_POST['detail']) && isset($_POST['type
     }
   }
   else {
-    $message="Champ empty";
+    $message="Input empty";
   }
 }
 
@@ -72,7 +72,7 @@ if (isset($_POST['add']) && isset($_POST['name']) && isset($_POST['model']) && i
     }
   }
   else {
-    $message="Champ empty";
+    $message="Input empty";
   }
 }
 
