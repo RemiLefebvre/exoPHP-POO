@@ -1,7 +1,7 @@
 <?php
 require("model/manager.php");
-require("model/entities/vehicules.php");
 require("services/createVehicule.php");
+require("services/autoLoader.php");
 
 
 

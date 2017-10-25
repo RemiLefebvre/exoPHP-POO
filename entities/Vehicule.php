@@ -1,4 +1,5 @@
 <?php
+
 /*
  ** Creation Vehicules
  */
@@ -55,23 +56,5 @@
 
  }
 
-
- /**
-  * Class Truck
-  */
- class Truck extends Vehicule{
- }
-
- /**
-  * Class Car
-  */
- class Car extends Vehicule{
- }
-
- /**
-  * Class Moto
-  */
- class Moto extends Vehicule{
- }
 
  ?>

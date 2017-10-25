@@ -2,7 +2,7 @@
 
 // autoLoader
 function loadclass($class){
-  require("../../model/entities/".$class.".php");
+  require("entities/".$class.".php");
 }
 spl_autoload_register("loadclass");
  ?>
