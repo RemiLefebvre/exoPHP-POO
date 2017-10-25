@@ -36,8 +36,10 @@ class VehiculeManager{
   /*
   **Delete vehicul in DBB
   */
-  public function delete(Vehicule $vehicule){
-    $this->_db->exec('DELETE FROM vehicules WHERE id = '.$vehicule->id());
+  public function delete($id){
+    if (is_int($id)){
+      $this->_db->query('DELETE FROM vehicules WHERE id = '.$id);
+    }
   }
 
 

@@ -71,6 +71,17 @@ if (isset($_POST['add'])) {
   }
 }
 
+/*
+**Delete vehicule
+*/
+if (isset($_POST['supp']) && isset($_POST['id'])) {
+  $suppVehicule=intval(htmlspecialchars($_POST['id']));
+  $manager->delete($suppVehicule);
+}
+
+
+
+
 
 /*
 **Get Véhicule list
