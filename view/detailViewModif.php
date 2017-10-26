@@ -23,7 +23,7 @@
       <label for="">Detail:</label><br>
       <input type="text" name="detail" value="<?php echo $vehicule->detail()?>" required><br>
       <input class=" mt-3" type="submit" name="updateVehicule" value="Accept modif">
-      <input type="submit" name="modifDetail" value="Cancel">
+      <input type="submit" name="" value="Cancel">
     </form>
   </div>
 </main>

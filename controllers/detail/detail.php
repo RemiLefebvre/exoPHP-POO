@@ -3,9 +3,6 @@ require("model/manager.php");
 require("services/createVehicule.php");
 require("services/autoLoader.php");
 
-
-
-
 /*
 **Creat Véhicule manager
 */
@@ -29,6 +26,7 @@ if (isset($_POST['updateVehicule']) && isset($_POST['detail']) && isset($_POST['
   /*verification if all input are full*/
   if ( !empty($_POST['detail']) && !empty($_POST['type']) && !empty($_POST['model']) && !empty($_POST['name'])) {
 
+    // protect failling SSX
     $vehiculeId=htmlspecialchars($_POST['id']);
     $vehiculeModel=htmlspecialchars($_POST['model']);
     $vehiculeDetail=htmlspecialchars($_POST['detail']);
@@ -40,7 +38,6 @@ if (isset($_POST['updateVehicule']) && isset($_POST['detail']) && isset($_POST['
     $manager->update($modifVehicule);
   }
 }
-
 
 /*
 **Get vehicule
